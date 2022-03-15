@@ -11,7 +11,7 @@ class ShoppingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: Color.fromARGB(255, 7, 7, 7),
       body: SafeArea(
         child: Column(
           children: [
@@ -81,14 +81,36 @@ class ShoppingPage extends StatelessWidget {
             // ignore: prefer_const_constructors
             GetX<CartController>(
               builder: (controller) {
-                return Text(
-                  'Total Amount: \$ ${controller.totalPrice} ',
-                  style:
-                      const TextStyle(fontSize: 32, color: Color(0xFFFFFFFF)),
+                return Container(
+                  padding: const EdgeInsets.only(bottom: 80),
+                  child: Text(
+                    'Total Amount: \$ ${controller.totalPrice} ',
+                    style:
+                        const TextStyle(fontSize: 32, color: Color(0xFFFFFFFF)),
+                  ),
                 );
               },
             )
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {},
+        backgroundColor: Color(0xFFFFFFFF),
+        icon: const Icon(
+          Icons.add_shopping_cart,
+          color: Colors.black,
+        ),
+        label: GetX<CartController>(
+          builder: (controller) {
+            return Text(
+              controller.countItems.toString(),
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 25,
+              ),
+            );
+          },
         ),
       ),
     );

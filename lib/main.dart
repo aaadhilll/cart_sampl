@@ -8,10 +8,6 @@ void main() {
 
 // ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
-  
-
- 
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -19,12 +15,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-       
         primarySwatch: Colors.blue,
       ),
       // ignore: prefer_const_constructors
-      home:  ShoppingPage(),
+      home: ShoppingPage(),
     );
   }
 }
-
